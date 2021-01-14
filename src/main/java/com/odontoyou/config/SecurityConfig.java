@@ -37,8 +37,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             "/v2/api-docs",
             "/webjars/**",
             "/autenticar",
-            "/alive",
-            "/users"
+            "/alive"
     };
 
 	@Override
