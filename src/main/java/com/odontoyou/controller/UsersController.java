@@ -28,22 +28,20 @@ public class UsersController {
 	PasswordEncoder pwdEncoder;
 	@Autowired
 	CPFService cpfService;
-	
+
 	@GetMapping
 	@ApiOperation("Retorna lista de todos os usuários")
 	public List<Users> listar() {
 		return repo.findAll();
 	}
-	
-	
+
 	@GetMapping("/{cpf}")
 	@ApiOperation("Retorna um único usuário")
 	public Optional<Users> getUser(@PathVariable(value = "cpf") String cpf) {
 		String _cpf = cpfService.ajustaCpf(cpf);
 		return repo.findById(_cpf);
 	}
-	
-	
+
 	@PostMapping
 	@ApiOperation("Salva informações de um novo usuário ou atualiza um já existente")
 	public Users salvar(@RequestBody Users user) {
@@ -51,5 +49,5 @@ public class UsersController {
 		user.setSenha(pwdEncoder.encode(user.getSenha()));
 		return repo.save(user);
 	}
-	
+
 }

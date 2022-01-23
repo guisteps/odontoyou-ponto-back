@@ -34,18 +34,18 @@ public @Data class Pontos {
 	private String dia;
 	
 	@Temporal(TemporalType.TIMESTAMP)
-	@JsonFormat(shape=JsonFormat.Shape.STRING, pattern="dd/MM/yyyy  HH:mm:ss")
+	@JsonFormat(shape=JsonFormat.Shape.STRING, pattern="dd/MM/yyyy HH:mm:ss")
 	private Date entrada;
 	
 	@Temporal(TemporalType.TIMESTAMP)
-	@JsonFormat(shape=JsonFormat.Shape.STRING, pattern="dd/MM/yyyy  HH:mm:ss")
-	private Date idaintervalo;
+	@JsonFormat(shape=JsonFormat.Shape.STRING, pattern="dd/MM/yyyy HH:mm:ss")
+	private Date idaIntervalo;
 	
 	@Temporal(TemporalType.TIMESTAMP)
-	@JsonFormat(shape=JsonFormat.Shape.STRING, pattern="dd/MM/yyyy  HH:mm:ss")
-	private Date voltaintervalo;
+	@JsonFormat(shape=JsonFormat.Shape.STRING, pattern="dd/MM/yyyy HH:mm:ss")
+	private Date voltaIntervalo;
 	
 	@Temporal(TemporalType.TIMESTAMP)
-	@JsonFormat(shape=JsonFormat.Shape.STRING, pattern="dd/MM/yyyy  HH:mm:ss")
+	@JsonFormat(shape=JsonFormat.Shape.STRING, pattern="dd/MM/yyyy HH:mm:ss")
 	private Date saida;
 }

@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -51,6 +52,12 @@ public class PontosController {
 	public Pontos salvar(@RequestBody Pontos pontos) {
 		pontos.setCpf(cpfService.ajustaCpf(pontos.getCpf()));
 		return repo.save(pontos);
+	}
+	
+	@DeleteMapping("/{id}")
+	@ApiOperation("Deleta ponto do dia.")
+	public void deletaPontoDoDia(@PathVariable(value = "id") long id) {
+		repo.deleteById(id);
 	}
 	
 }

@@ -22,4 +22,5 @@ public @Data class Users {
 	private String nome;
 	private String senha;
 	private boolean adm;
+	private String email;
 }
