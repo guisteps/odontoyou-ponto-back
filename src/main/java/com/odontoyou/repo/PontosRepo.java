@@ -13,6 +13,6 @@ public interface PontosRepo extends JpaRepository<Pontos, Long> {
 	@Query(value = "Select p FROM Pontos p WHERE p.cpf = ?1 AND p.dia = ?2")
 	public Optional<Pontos> findDiaFuncionario(String cpf, String dia);
 	
-	@Query(value = "Select p FROM Pontos p WHERE p.cpf = ?1 AND p.dia LIKE ?2%")
+	@Query(value = "Select p FROM Pontos p WHERE p.cpf = ?1 AND p.dia LIKE ?2")
 	public List<Pontos> findMesAnoFuncionario(String cpf, String mesAno);
 }

@@ -44,7 +44,8 @@ public class PontosController {
 	@ApiOperation("Retorna o mês de um funcionário")
 	public List<Pontos> getMesFunc(@PathVariable(value = "cpf") String cpf, @PathVariable(value = "mesAno") String mesAno) {
 		String _cpf = cpfService.ajustaCpf(cpf);
-		return repo.findMesAnoFuncionario(_cpf, mesAno);
+		String like = "%" + mesAno + "%";
+		return repo.findMesAnoFuncionario(_cpf, like);
 	}
 	
 	@PostMapping
