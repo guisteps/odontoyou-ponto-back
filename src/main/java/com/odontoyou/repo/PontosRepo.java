@@ -14,5 +14,5 @@ public interface PontosRepo extends JpaRepository<Pontos, Long> {
 	public Optional<Pontos> findDiaFuncionario(String cpf, String dia);
 	
 	@Query(value = "Select p FROM Pontos p WHERE p.cpf = ?1 AND p.dia LIKE ?2 ORDER BY p.dia")
-	public List<Pontos> findMesAnoFuncionario(String cpf, String mesAno);
+	public List<Pontos> findMesAnoFuncionario(String cpf, String mesAno); 
 }
